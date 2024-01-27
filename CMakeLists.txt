@@ -10,7 +10,9 @@ FetchContent_Declare(SFML
     GIT_TAG 2.6.x)
 FetchContent_MakeAvailable(SFML)
 
-add_executable(CMakeSFMLProject src/main.cpp) //This is the executable name
+add_executable(CMakeSFMLProject src/main.cpp) //This is the executable name and the linked main file
+//you can link other files than src/main.cpp 
+//but just be sure that all .cpp files are included in the add_executable call to avoid linker errors.
 target_link_libraries(CMakeSFMLProject PRIVATE sfml-graphics) //executable
 target_compile_features(CMakeSFMLProject PRIVATE cxx_std_17) //executable
 
